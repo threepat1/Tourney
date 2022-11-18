@@ -39,6 +39,14 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/bracket-list", bracketRouter);
 
+//test 
+var jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const { document } = (new JSDOM('')).window;
+global.document = document;
+var $ = require("jquery")(window);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
